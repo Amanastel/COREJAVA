@@ -1,4 +1,4 @@
-package Polymorphism;
+package OOPS.Polymorphism;
 
 public class Person {
     public void greet() {

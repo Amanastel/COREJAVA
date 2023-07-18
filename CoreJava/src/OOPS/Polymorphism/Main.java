@@ -1,7 +1,9 @@
-package Polymorphism;
+package OOPS.Polymorphism;
 
 public class Main {
     public static void main(String[] args) {
+
+        //polymorphism have 2 type
 
         // Compile time polymorphism
 
@@ -9,6 +11,7 @@ public class Main {
         student.study();
         student.study(5);
         student.study("Java");
+
         //here we can see that the study method is called from the student class
         //this is called compile time polymorphism
         //this is because the method is overloaded in the student class
