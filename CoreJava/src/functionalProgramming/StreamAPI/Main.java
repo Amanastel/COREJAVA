@@ -2,6 +2,7 @@ package functionalProgramming.StreamAPI;
 
 public class Main {
     public static void main(String[] args) {
+
         // StreamAPI
         // StreamAPI is a new feature in Java 8. It is used to process a collection of objects.
         // It is used to iterate, filter and extract data from collection.
