@@ -86,5 +86,41 @@ public class StreamObject {
         // filter() take Predicate as argument. and Predicate returns boolean value whereas Function returns a value.
         // map() each element operates perform on each element of stream and returns a new stream.
 
+
+        // sorted() is used to sort the stream elements.
+        numbers.stream().sorted().forEach(e -> System.out.print(e+" "));
+
+        // distinct() is used to remove duplicate elements from the stream.
+        System.out.println();
+        numbers.stream().distinct().forEach(e -> System.out.print(e+" "));
+
+
+        // count() is used to count the number of elements in the stream.
+        System.out.println();
+        System.out.println(numbers.stream().count());
+
+
+        // limit() is used to reduce the size of stream.
+        System.out.println();
+        numbers.stream().limit(2).forEach(e -> System.out.print(e+" "));
+
+        // skip() is used to skip the elements from the stream.
+        System.out.println();
+        numbers.stream().skip(2).forEach(e -> System.out.print(e+" "));
+
+
+        // min() is used to find the minimum value in the stream.
+        System.out.println();
+        System.out.println(numbers.stream().min((e1, e2) -> e1.compareTo(e2)));
+
+
+        // max() is used to find the maximum value in the stream.
+        System.out.println();
+        System.out.println(numbers.stream().max((e1, e2) -> e1.compareTo(e2)));
+
+
+        // allMatch() is used to check whether all the elements in the stream are matching the given condition.
+        System.out.println();
+        System.out.println(numbers.stream().allMatch(e -> e%2==0));
     }
 }
