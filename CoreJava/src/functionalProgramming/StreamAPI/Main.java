@@ -1,5 +1,8 @@
 package functionalProgramming.StreamAPI;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -35,5 +38,14 @@ public class Main {
         // StreamAPI is used to return
 
 
+        List<Integer> numbers = List.of(12, 9, 13, 4, 6, 2, 4, 12, 15);
+
+        List<Integer> n =  numbers.stream().filter(e -> e%2==0 ).collect(Collectors.toList());
+        System.out.println(n);
+
+        List<Integer> gt50 = numbers.stream().filter(e -> e>10).collect(Collectors.toList());
+        numbers.stream().filter(e -> e>10).forEach(e -> System.out.print(e+" "));
+        System.out.println();
+        System.out.println(gt50);
     }
 }
