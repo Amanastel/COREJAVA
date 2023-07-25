@@ -11,5 +11,6 @@ public class StreamMain {
         list.stream().forEach(System.out::println);
 
 
+
     }
 }
