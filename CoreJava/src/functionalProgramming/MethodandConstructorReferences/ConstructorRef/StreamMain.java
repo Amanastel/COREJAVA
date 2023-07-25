@@ -10,7 +10,5 @@ public class StreamMain {
         // Method Reference
         list.stream().forEach(System.out::println);
 
-
-
     }
 }
