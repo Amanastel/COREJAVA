@@ -1,5 +1,6 @@
 package com.springAnnotation;
 
+import com.springAnnotation.controller.PizzaController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,7 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringAnnotationApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringAnnotationApplication.class, args);
+		var Context = SpringApplication.run(SpringAnnotationApplication.class, args);
+        PizzaController pizzaController = Context.getBean(PizzaController.class);
+        System.out.println(pizzaController.getPizza());
 	}
 
 }
