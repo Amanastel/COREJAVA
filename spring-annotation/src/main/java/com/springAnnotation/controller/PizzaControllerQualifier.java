@@ -1,8 +1,9 @@
 package com.springAnnotation.controller;
 
 
-import com.springAnnotation.service.VegPizza;
+import com.springAnnotation.service.Pizza;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 // @Component we don't need to create the instance of the class using the new keyword.
@@ -18,37 +19,25 @@ import org.springframework.stereotype.Component;
 // @Component annotation is used with the classes that are auto detected by classpath scanning.
 
 @Component
-public class PizzaController {
+public class PizzaControllerQualifier {
 
 
-    // @Autowired annotation finds the bean in the ApplicationContext that matches the data type of the property or constructor parameter.
-    // @Autowired annotation is used to auto wire bean on the setter method.
+
+
+    // Qualifier
+
+    // @Qualifier annotation is used to resolve the autowiring conflict, when there are multiple beans of same type.
+    // @Qualifier annotation is used to specify the bean name with which the property or constructor argument should be autowired.
+
+    private Pizza pizza;
+
     @Autowired
-    private VegPizza vegPizza;
-
-
-
-    // this is constructor injection
-    // @Autowired annotation is used to auto wire bean on the constructor.
-//    @Autowired
-//    public PizzaController(VegPizza vegPizza){
-//        this.vegPizza = vegPizza;
-//    }
-
-
-    // this is setter injection
-    // @Autowired annotation is used to auto wire bean on setter method.
-//    @Autowired
-//    public void setVetoString(VegPizza vegPizza){
-//        this.vegPizza = vegPizza;
-//    }
-
-    public String getPizza(){
-        return vegPizza.getPizza();
+    public PizzaControllerQualifier(@Qualifier("vegPizza") Pizza pizza){
+        this.pizza = pizza;
     }
 
-
-
-
+    public String getPizza(){
+        return pizza.getPizza();
+    }
 
 }
